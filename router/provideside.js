@@ -47,20 +47,20 @@ router.post("/upload", upload.single("profile"), (req, res) => {
 });
 
 var jwttoken = async (req, res, next) => {
-  var token = req.headers.autherization;
-  console.log(token);
+  // var token = req.headers.autherization;
+  // console.log(token);
 
-  token = token.split(" ")[1];
-  const varifyuser = jwt.verify(
-    token,
-    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-  );
-  console.log(varifyuser);
-  const user = await providerRegister.findOne({ _id: varifyuser._id });
-  console.log(user);
+  // // token = token.split(" ")[1];
+  // const varifyuser = jwt.verify(
+  //   token,
+  //   "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  // );
+  // console.log(varifyuser);
+  // const user = await providerRegister.findOne({ _id: varifyuser._id });
+  // console.log(user);
 
-  req.token = token;
-  req.user = user;
+  // req.token = token;
+  // req.user = user;
 
   next();
 };
@@ -376,6 +376,10 @@ router.get("/", jwttoken, async (req, res) => {
   const getorder = req.user;
   res.json(getorder);
   // console.log(` this is cookie ${req.cookies.jwt}`);
+});
+
+router.get("/home", (req, res) => {
+  res.json("sadhgj");
 });
 
 router.get("/secret", jwttoken, (req, res) => {
