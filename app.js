@@ -5,7 +5,7 @@ const hbs = require("hbs");
 var dotenv = require("dotenv");
 const passport = require("passport");
 dotenv.config({ path: "./config.env" });
-var PORT = process.env.PORT;
+var PORT = process.env.PORT || 9000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 ////////////
