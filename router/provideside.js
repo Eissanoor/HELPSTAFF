@@ -372,14 +372,14 @@ router.post("/addJob", async (req, res) => {
   }
 });
 
-router.get("/", jwttoken, async (req, res) => {
+router.get("/home", jwttoken, async (req, res) => {
   const getorder = req.user;
   res.json(getorder);
   // console.log(` this is cookie ${req.cookies.jwt}`);
 });
 
-router.get("/home", (req, res) => {
-  res.json("sadhgj");
+router.get("/", (req, res) => {
+  res.json("Good");
 });
 
 router.get("/secret", jwttoken, (req, res) => {
