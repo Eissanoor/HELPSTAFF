@@ -19,6 +19,9 @@ app.set("view engine", "hbs");
 app.get("/logi", (req, res) => {
   res.render("login");
 });
+app.get("/", (req, res) => {
+  res.render("login");
+});
 app.set("views", templetpath);
 //---------------------
 console.log("khansaab");
