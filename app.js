@@ -20,7 +20,7 @@ app.get("/logi", (req, res) => {
   res.render("login");
 });
 app.get("/", (req, res) => {
-  res.render("login");
+  res.send("login");
 });
 app.set("views", templetpath);
 //---------------------
